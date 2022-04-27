@@ -1,31 +1,45 @@
 #include <iostream>
+#include <conio.h>
  
-using namespace std;
- 
-int main(void)
+int main()
 {
-    float   ch1,ch2,res;
-    char    sim;
-    cout<<"Ââåäèòå äâà ÷èñëà ÷åðåç ïðîáåë: \n";
-    cin>>ch1>>ch2;
-    cout<<"Ââåäèòå ñèìâîë îïåðàöèè: \n";
-    cin>>sim;
-    switch (sim) 
+    setlocale(LC_ALL, "Russian");
+ 
+    double a,b,result;
+    char n;
+    std::cout << "Введите a:"<<std::endl;
+    std::cin >> a;
+    std::cout << "Введите b:" << std::endl;
+    std::cin >> b;
+    std::cout << "Выберите одну из операций:" << std::endl;
+    std::cout << "Сложение +" << std::endl;
+    std::cout << "Вычитание -" << std::endl;
+    std::cout << "Умножение *" << std::endl;
+    std::cout << "Деление /" << std::endl;
+    std::cin >> n;
+    if (!strcmp(&n,"+"))
     {
-        case '*':
-            res=ch1*ch2;
-            break;
-        case '/':
-            res=ch1/ch2;
-            break;
-        case '-':
-            res=ch1-ch2;
-            break;
-        case '+':
-            res=ch1+ch2;
-            break;                    
+        result = a + b;
+        std::cout << "Сумма a+b:" << result << std::endl;
     }
-    cout<<ch1<<sim<<ch2<<"="<<res<<endl;
-    system("pause");
+        
+    if (!strcmp(&n, "-"))
+    {
+        result = a - b;
+        std::cout << "Разность a-b:" << result << std::endl;
+    }
+    if (!strcmp(&n, "*"))
+        {
+            result = a * b;
+            std::cout << "Произведение a*b:" << result << std::endl;
+        }
+    if (!strcmp(&n, "/"))
+        {
+            result = a / b;
+            std::cout << "Частное a/b:" << result << std::endl;
+        }
+    
+ 
+    _getch();
     return 0;
 }
